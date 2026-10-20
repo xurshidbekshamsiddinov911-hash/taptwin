@@ -28,4 +28,97 @@ header{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .amount{font-size:clamp(33px,9vw,45px);font-weight:1000;letter-spacing:-1px;color:#ffdb62;text-shadow:0 3px 0 #a65a00,0 0 15px #ffc94c66;overflow-wrap:anywhere}
 .stat{padding:13px;border-radius:20px;min-height:92px}
 .stat-head{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900}
-  
+.stat-icon{font-size:22px;filter:drop-shadow(0 2px 4px #0003)}
+.stat-number{font-size:12px;font-weight:800;color:#e4d7ff;margin-top:7px}
+.progress{height:8px;background:#160c4b;border:1px solid #ffffff30;border-radius:20px;overflow:hidden;margin-top:7px}
+.fill{height:100%;width:100%;border-radius:20px;background:linear-gradient(90deg,#c56bff,#f1a9ff,#ffd86b);box-shadow:0 0 10px #d78dff88;transition:width .2s}
+.rank-card{margin-top:10px;padding:13px 15px;border-radius:20px}.rank-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.rank-name{font-size:16px;font-weight:1000;color:#ffdf72}.rank-next{font-size:10px;color:#e3d6ff;font-weight:800;text-align:right}.rank-track{height:9px;background:#160c4b;border:1px solid #ffffff30;border-radius:20px;overflow:hidden;margin-top:9px}.rank-fill{height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,#72d8ff,#d78dff,#ffd86b);transition:width .3s}.rank-caption{font-size:10px;color:#e4d7ff;font-weight:800;margin-top:6px}.coin-area{position:relative;min-height:320px;flex:1;display:flex;align-items:center;justify-content:center;margin:2px 0 8px;isolation:isolate}
+.coin-area:before{content:"";position:absolute;width:min(82vw,330px);height:min(82vw,330px);border-radius:50%;border:2px solid #ffffff55;box-shadow:0 0 0 12px #8f45ff12,0 0 40px #a04dff55,inset 0 0 35px #ffffff28;z-index:-1}
+.coin-area:after{content:"";position:absolute;bottom:16px;width:min(75vw,290px);height:34px;border-radius:50%;background:#6c2bcf44;filter:blur(12px);z-index:-1}
+.coin{position:relative;width:min(59vw,225px);height:min(59vw,225px);border-radius:50%;border:5px solid #fff0a1;cursor:pointer;touch-action:manipulation;user-select:none;outline:none;
+ background:radial-gradient(circle at 32% 24%,#fff9b9 0,#ffe85d 18%,#ffbd24 44%,#ec9710 70%,#a94f00 100%);
+ box-shadow:0 0 0 5px #ffd84c55,0 15px 24px #51207155,0 0 32px #fff08b99,inset 0 5px 9px #fffbd1,inset 0 -8px 13px #8e3f00;
+ transform:perspective(700px) rotateY(-20deg) rotateX(5deg);transition:transform .1s,filter .1s}
+.coin:before{content:"";position:absolute;inset:8px;border-radius:50%;border:3px solid #fff2a4;box-shadow:inset 0 0 0 3px #d9800a77,inset 0 0 0 7px #fff5a833}
+.coin:after{content:"";position:absolute;right:-12px;top:15px;width:17px;height:calc(100% - 30px);border-radius:0 50% 50% 0;background:repeating-linear-gradient(180deg,#fff2a0 0 7px,#d88708 7px 12px,#ffcb31 12px 17px);border-right:2px solid #9c4e00;transform:skewY(-8deg);box-shadow:4px 5px 5px #5d2c4655}
+.coin.popped{transform:perspective(700px) rotateY(-14deg) rotateX(3deg) scale(.94);filter:brightness(1.14)}
+.coin-face{position:absolute;inset:0;display:grid;place-items:center;z-index:1;color:#a95c00;text-shadow:0 2px 0 #fff7}
+.coin-face:before{content:"";position:absolute;width:68%;height:68%;border-radius:50%;border:2px solid #fff4a4;box-shadow:0 0 0 3px #d9840b55}
+.coin-letter{font-size:83px;font-weight:1000;line-height:1;letter-spacing:-6px;transform:translateX(-2px);filter:drop-shadow(2px 3px 0 #fff1)}
+.coin-word{position:absolute;bottom:25px;font-size:9px;letter-spacing:3px;font-weight:1000;color:#7d3900}
+.plus{position:absolute;top:12%;left:57%;font-size:38px;font-weight:1000;color:#ffdc5a;text-shadow:0 3px 0 #a65a00,0 0 14px #fff4a8;transform:rotate(-8deg);pointer-events:none}
+.spark{position:absolute;z-index:4;pointer-events:none;color:#fff8a4;font-size:23px;font-weight:1000;text-shadow:0 0 13px #fff,0 0 20px #ffb700;animation:rise .65s ease-out forwards}
+@keyframes rise{to{opacity:0;transform:translateY(-70px) scale(1.25)}}
+.tapbtn{width:min(75%,310px);align-self:center;margin-top:-3px;padding:15px 10px 12px;border:2px solid #e7c4ff;border-radius:34px;background:linear-gradient(110deg,#8d28ff,#5b12d4 55%,#a431ff);box-shadow:0 7px 0 #3a117b,0 0 25px #a44dff88,inset 0 2px 4px #ffffff88;color:white;font-size:26px;font-weight:1000;letter-spacing:2px;cursor:pointer;touch-action:manipulation}
+.tapbtn small{display:block;font-size:10px;letter-spacing:2px;margin-top:2px;color:#f1dcff}.tapbtn:active{transform:translateY(3px);box-shadow:0 4px 0 #3a117b,0 0 25px #a44dff88}
+.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:20px;padding:9px;border:1px solid #c6a0ff;border-radius:24px;background:linear-gradient(145deg,#21105beF,#32108fea);box-shadow:0 8px 18px #27105244}
+.action{min-width:0;min-height:82px;border:1px solid #7b52e7;border-radius:17px;background:linear-gradient(145deg,#382078,#24145e);color:white;padding:10px 4px;font-size:11px;font-weight:900;cursor:pointer}
+.action strong{display:block;font-size:22px;margin-bottom:3px}.action small{display:block;color:#d4c4ff;font-size:9px;margin-top:4px;font-weight:700}.action:active{transform:scale(.97)}
+.footer{text-align:center;color:#fff0ff;font-size:10px;font-weight:800;letter-spacing:.5px;margin-top:14px;text-shadow:0 1px 4px #4b2677}
+.toast{position:fixed;z-index:10;top:calc(14px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);padding:11px 15px;background:#321075;border:1px solid #e0b9ff;border-radius:14px;box-shadow:0 7px 25px #24104788;opacity:0;pointer-events:none;transition:opacity .2s;white-space:nowrap;font-size:12px;font-weight:800;max-width:92vw}.toast.show{opacity:1}
+@media(max-height:720px){.top-grid{margin-top:12px}.coin-area{min-height:255px}.coin{width:min(51vw,190px);height:min(51vw,190px)}.coin-letter{font-size:70px}.actions{margin-top:13px}.action{min-height:72px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+<header><div><div class="brand"><span class="crown">👑</span><span class="brandname">TapTwin</span></div><div class="tagline">TAP • EARN • GROW</div></div><div class="profile">👤 &nbsp; PLAYER　⌄</div></header>
+<section class="top-grid">
+  <div class="balance panel"><div class="label">YOUR BALANCE</div><div class="amountrow"><div class="mini-coin">T</div><div class="amount" id="balance">0</div></div></div>
+  <div class="stat panel"><div class="stat-head"><span class="stat-icon">👑</span><span id="levelText">Lv. 1</span></div><div class="progress"><div class="fill" id="levelFill" style="width:0%"></div></div><div class="stat-number" id="levelProgress">0 / 100</div></div>
+  <div class="stat panel"><div class="stat-head"><span class="stat-icon">⚡</span><span>Energy</span></div><div class="stat-number" id="energyText">500 / 500</div><div class="progress"><div class="fill" id="energyFill"></div></div></div>
+</section>
+<section class="rank-card panel"><div class="rank-top"><div><div class="label">YOUR RANK</div><div class="rank-name" id="rankName">🪙 Beginner</div></div><div class="rank-next" id="rankNext">Next: Rookie</div></div><div class="rank-track"><div class="rank-fill" id="rankFill"></div></div><div class="rank-caption" id="rankProgress">0 / 1,000 coins to next rank</div></section>
+<section class="coin-area" id="coinArea"><div class="plus" id="plus">+1</div><button class="coin" id="coin" aria-label="Tap gold coin"><div class="coin-face"><div class="coin-letter">T</div><div class="coin-word">TAPTWIN</div></div></button></section>
+<button class="tapbtn" id="tapButton">☝ TAP<small>+<span id="tapValue">1</span> COIN</small></button>
+<section class="actions">
+<button class="action" id="daily"><strong>🎁</strong>Daily Bonus<small>Get 100 coins</small></button>
+<button class="action" id="upgrade"><strong>⬆️</strong>Upgrade<small id="upgradeText">Lv. 1 → Lv. 2</small></button>
+<button class="action" id="boost"><strong>⚡</strong>Boost<small id="boostText">x2 coins (5 min)</small></button>
+</section>
+<div class="footer">👑 &nbsp; Bigger dreams　 •　 More coins　 •　 Together &nbsp; 👑</div>
+<div class="footer" style="font-size:9px;opacity:.8">DEMO ONLY • Coins are game points, not real money.</div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $=id=>document.getElementById(id),MAX=500,KEY='taptwin-demo';
+let state={balance:0,energy:MAX,level:1,lastBonus:0,boostUntil:0};
+try{const old=JSON.parse(localStorage.getItem(KEY)||'{}');if(old&&typeof old==='object')state={...state,...old}}catch(e){}
+state.balance=Math.max(0,Number(state.balance)||0);state.energy=Math.max(0,Math.min(MAX,Number(state.energy)||0));state.level=Math.max(1,Number(state.level)||1);state.lastBonus=Math.max(0,Number(state.lastBonus)||0);state.boostUntil=Math.max(0,Number(state.boostUntil)||0);
+const RANKS=[{name:'Beginner',icon:'🪙',min:0},{name:'Rookie',icon:'🥉',min:1000},{name:'Rising Star',icon:'🌟',min:10000},{name:'Pro',icon:'💎',min:100000},{name:'Master',icon:'👑',min:500000},{name:'TapTwin Legend',icon:'🔥',min:1000000}];
+let previousRank=rankIndex(state.balance),toastTimer;
+function rankIndex(balance){let i=0;for(let n=0;n<RANKS.length;n++){if(balance>=RANKS[n].min)i=n}return i}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}render()}
+function boosted(){return Date.now()<state.boostUntil}
+function render(){
+ const ri=rankIndex(state.balance),rank=RANKS[ri],next=RANKS[ri+1];
+ $('rankName').textContent=`${rank.icon} ${rank.name}`;
+ if(next){const progress=state.balance-rank.min,span=next.min-rank.min;$('rankNext').textContent=`Next: ${next.name}`;$('rankFill').style.width=`${Math.max(0,Math.min(100,progress/span*100))}%`;$('rankProgress').textContent=`${Math.floor(progress).toLocaleString()} / ${span.toLocaleString()} coins to next rank`;}else{$('rankNext').textContent='🏆 MAX RANK';$('rankFill').style.width='100%';$('rankProgress').textContent='You reached the highest rank!';}
+ if(ri>previousRank){toast(`🎉 Rank up! ${rank.icon} ${rank.name}`)}previousRank=ri;
+ $('balance').textContent=Math.floor(state.balance).toLocaleString();
+ $('energyText').textContent=`${state.energy} / ${MAX}`;$('energyFill').style.width=`${state.energy/MAX*100}%`;
+ $('levelText').textContent=`Lv. ${state.level}`;
+ const progress=state.balance%(state.level*100),need=state.level*100;
+ $('levelProgress').textContent=`${Math.floor(progress)} / ${need}`;$('levelFill').style.width=`${Math.min(100,progress/need*100)}%`;
+ $('tapValue').textContent=state.level*(boosted()?2:1);$('plus').textContent=`+${state.level*(boosted()?2:1)}`;
+ $('upgradeText').textContent=`Lv. ${state.level} → Lv. ${state.level+1}`;
+ $('boostText').textContent=boosted()?`Active ${Math.ceil((state.boostUntil-Date.now())/60000)} min`:'x2 coins (5 min)';
+}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),1800)}
+function tap(event){
+ if(state.energy<1){toast('Energy is empty — wait a little!');return}
+ const amount=state.level*(boosted()?2:1);state.balance+=amount;state.energy--;render();save();spark(event,`+${amount}`);
+ $('coin').classList.add('popped');setTimeout(()=>$('coin').classList.remove('popped'),110)
+}
+function spark(event,text){const area=$('coinArea'),r=area.getBoundingClientRect(),s=document.createElement('span');s.className='spark';s.textContent=text;
+ let x=event&&Number.isFinite(event.clientX)?event.clientX-r.left:r.width/2,y=event&&Number.isFinite(event.clientY)?event.clientY-r.top:r.height/2;
+ s.style.left=`${Math.max(8,Math.min(r.width-45,x))}px`;s.style.top=`${Math.max(8,y)}px`;area.appendChild(s);setTimeout(()=>s.remove(),700)}
+$('coin').addEventListener('click',tap);$('tapButton').addEventListener('click',tap);
+$('daily').addEventListener('click',()=>{const now=Date.now();if(now-state.lastBonus<86400000){toast('Daily bonus already claimed!');return}state.balance+=100;state.lastBonus=now;save();toast('+100 demo coins!')});
+$('upgrade').addEventListener('click',()=>{const cost=state.level*100;if(state.balance<cost){toast(`Need ${cost.toLocaleString()} coins to upgrade`);return}state.balance-=cost;state.level++;save();toast('Upgrade successful!')});
+$('boost').addEventListener('click',()=>{if(boosted()){toast('Boost is already active!');return}const cost=250;if(state.balance<cost){toast('Need 250 coins to activate Boost');return}state.balance-=cost;state.boostUntil=Date.now()+5*60*1000;save();toast('2x Boost active for 5 minutes!')});
+setInterval(()=>{if(state.energy<MAX){state.energy=Math.min(MAX,state.energy+1);save()}if(state.boostUntil&&Date.now()>=state.boostUntil){state.boostUntil=0;save()}},1200);
+render();
+</script>
+</body>
+</html>
